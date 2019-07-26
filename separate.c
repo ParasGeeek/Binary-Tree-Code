@@ -10,38 +10,30 @@ void printArray(int *arr,int n)
 	printf("\n");
 	return;
 }
-void swap(int *a,int *b)
-{
-	int temp;
-	temp=*a;
-	*a=*b;
-	*b=temp;
-}
 
-void segregate(int *arr,int n)
+void separate(int *arr,int n)
 {
-	//int swap;
+	//int i;
 	int left_index=0,right_index=n-1;
-	
 	while(left_index < right_index)
 	{
-		while(arr[left_index]%2==0 && left_index < right_index)
+		while((arr[left_index]==0) && (left_index < right_index))
 		{
 			left_index++;
 		}
-		while(arr[right_index]%2==1 && right_index > left_index)
+		while((arr[right_index]==1) && (right_index > left_index))
 		{
 			right_index--;
 		}
 		if(left_index < right_index)
 		{
-			swap(&arr[left_index],&arr[right_index]);
-			left_index++;
-			right_index--;
+			arr[left_index++]=0;
+			arr[right_index--]=1;
 		}
 	}
+	return;
 }
-
+//The Vulture and the little girl
 int main()
 {
 	int t;
@@ -55,10 +47,8 @@ int main()
 		{
 			scanf("%d",&arr[i]);
 		}
-		segregate(arr,n);
-		//printf("After segregation:\n");
+		separate(arr,n);
 		printArray(arr,n);
 	}
 	return 0;
 }
-
