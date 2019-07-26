@@ -1,43 +1,47 @@
 #include<stdio.h>
 #include<stdlib.h>
+//#include<stdbool.h>
 
-
-int find_triplet(int *arr,int m)
+int find_triplet(int *arr,int n,int sum)
 {
-	int i,j;
-	int sum;
-	for(i=0;i<n-1;i++)
+	for(int i=0;i<n-2;i++)
 	{
-		for(j=2;j<m;j++)
+		for(int j=i+1;j<n-1;j++)
 		{
-			sum=arr[i]+arr[i+1]+arr[j]
+			for(int k=j+1;k<n;k++)
+			{
+				if(arr[i]+arr[j]+arr[k]==sum)
+				{
+					//printf("%d %d %d",arr[i],arr[j],arr[k]);
+					return 1;
+				}
+			}
 		}
 	}
 	return 0;
 }
-
 int main()
 {
 	int t;
 	scanf("%d",&t);
-	int i,m,p;
 	while(t--)
 	{
-		scanf("%d",&m);
-		int *arr=(int*)malloc(sizeof(int)*m);
-		for(i=0;i<m;i++)
+		int n,sum;
+		scanf("%d %d",&n,&sum);
+		int arr[n];
+		for(int i=0;i<n;i++)
 		{
 			scanf("%d",&arr[i]);
 		}
-		p=find_triplet(arr,m);
-		if(p==1)
+		//scanf("%d",&sum);
+		if(find_triplet(arr,n,sum)==1)
 		{
-			printf("Yes:\n");
+			printf("1\n");
 		}
 		else
 		{
-			printf("No:\n");
+			printf("0\n");
 		}
-		free(arr);
 	}
+	return 0;
 }
