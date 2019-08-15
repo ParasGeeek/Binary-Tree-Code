@@ -1,59 +1,46 @@
-#include<iostream>
-#include<bits/stdc++.h>
 #include<stack>
-#include<queue>
+#include<bits/stdc++.h>
+#include <iostream>
 #include<deque>
+#include<queue>
+#include<set>
+#include<map>
+#include<list>
 #include<algorithm>
-#include<cmath>
-
 using namespace std;
 
-class node
+struct node
 {
-	public:
 	int data;
-	node *left;
-	node* right;
+	struct node* left;
+	struct node* right;
 };
 
-node* newNode(int data)
+struct node* newNode(int new_data)
 {
-	node* Node=new node();
-	Node->left=NULL;
-	Node->right=NULL;
-	Node->data=data;
-	return(Node);
+	struct node* newnode=new node();
+	newnode->data=new_data;
+	newnode->left=NULL;
+	newnode->right=NULL;
+	return newnode;
 }
 
-int size(node *root)      // This is second logic....
+int size(struct node* root)
 {
-	static int count=0;
 	if(!root)
 	{
 		return 0;
 	}
+	/*if(!root->left && !root->right)
+	{
+		return 1;
+	}*/
 	else
 	{
-		size(root->left);
-		count++;
-		size(root->right);
-	}
-	return count;
-}
-/*
-int size(node* root)       // This is first logic.....
-{
-	if(!root)
-	{
-		return 0;  
-  
-	}
-	else
-	{
-		return (size(root->left)+1+size(root->right));
+		return(size(root->left)+1+size(root->right));
 	}
 }
-*/
+
 int main()  
 {  
     node *root = newNode(1);  
@@ -62,7 +49,7 @@ int main()
     root->left->left = newNode(4);  
     root->left->right = newNode(5);  
       
-    cout << "Size of the tree is " << size(root);  
+    std::cout<< "Size of the tree is: "<< size(root)<<endl;  
     return 0;  
 }  
   
