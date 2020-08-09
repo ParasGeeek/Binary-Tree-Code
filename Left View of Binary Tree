@@ -1,0 +1,26 @@
+Questions Link:  
+https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
+
+void leftView(Node *root)
+{
+   if(!root)
+   {
+       return;
+   }
+   //std::cout<<root->data<<" ";
+   if(!root->left && !root->right)
+   {
+       std::cout<<root->data<<" ";
+       return;
+   }
+   if(root->left)
+   {
+     std::cout<<root->data<<" ";
+     leftView(root->left);
+   }
+   else if(root->right)
+   {
+       std::cout<<root->data<<" ";
+       leftView(root->right);
+   }
+}
