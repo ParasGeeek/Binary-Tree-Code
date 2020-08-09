@@ -1,3 +1,9 @@
+Question Link: https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1
+or Follow README FILE.
+*******************************************************
+**********************Code*****************************
+*******************************************************
+
 bool findPath(Node* root,vector<Node*> &path,int k)
 {
     if(!root)
