@@ -67,3 +67,7 @@ Constraints:
 1 <= N <= 104
 ** For More Input/Output Examples Use 'Expected Output' option **
 
+***********************************************************************
+
+Left View of Binary Tree:
+https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
