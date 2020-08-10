@@ -16,3 +16,11 @@ Question2: Lowest Common Ancestor in a Binary Search Tree
 
 Left View of Binary Tree:
 https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
+
+**********************************************************************************************************************************************************************
+Determine if Two Trees are Identical:
+Link:
+https://practice.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1
+
+**********************************************************************************************************************************
+
